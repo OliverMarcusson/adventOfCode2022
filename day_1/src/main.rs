@@ -1,6 +1,8 @@
 use std::fs;
+use std::time::Instant;
 
 fn main() {
+    let instant = Instant::now();
     let input_content = fs::read_to_string("input.txt").unwrap();
     let input_vector: Vec<&str> = input_content.split("\r\n").collect();
 
@@ -22,4 +24,5 @@ fn main() {
     }
     
     println!("{:?}", top_three_calories);
+    println!("Time elapsed: {:?}", instant.elapsed());
 }
