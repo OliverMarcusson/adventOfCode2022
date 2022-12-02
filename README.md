@@ -5,3 +5,4 @@ Av Oliver Marcusson
 
 ## Dagar Klarade
 Dag 1: * *
+Dag 2: * *
