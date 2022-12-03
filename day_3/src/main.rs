@@ -1,4 +1,5 @@
 use std::fs;
+use std::time::Instant;
 
 fn find_matching_char(compartments: (&str, &str)) -> Option<char> {
     for c1_character in compartments.0.chars() {
@@ -21,10 +22,12 @@ fn find_badges(sacks: (&str, &str, &str)) -> Option<char> {
 }
 
 fn main() {
+    let instant = Instant::now();
     let priority: String = String::from("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
     let input_string = fs::read_to_string("input.txt").unwrap();
     let input_vector: Vec<&str> = input_string.split("\r\n").collect();
     let mut points: u32 = 0;
+    // println!("Time elapsed: {:?}", instant.elapsed());
 
     for sack in &input_vector {
         let compartments = sack.split_at((&sack.len()) / 2);
@@ -41,6 +44,7 @@ fn main() {
     }
 
     println!("Part one Points: {}", points);
+    // println!("Time elapsed: {:?}", instant.elapsed());
     points = 0;
 
     for vector_index in (0..input_vector.len()).step_by(3) {
@@ -53,4 +57,5 @@ fn main() {
     }
 
     println!("Part two Points: {}", points);
+    println!("Time elapsed: {:?}", instant.elapsed());
 }
