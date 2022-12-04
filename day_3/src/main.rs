@@ -2,10 +2,8 @@ use std::fs;
 use std::time::Instant;
 
 fn find_matching_char(compartments: (&str, &str)) -> Option<char> {
-    for c1_character in compartments.0.chars() {
-        for c2_character in compartments.1.chars() {
-            if c1_character == c2_character {return Some(c1_character)}
-        }
+    for character in compartments.0.chars() {
+        if compartments.1.find(character) != None {return Some(character);}
     }
     println!("Couldn't find matching character in {:?}", compartments);
     return None
