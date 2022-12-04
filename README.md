@@ -7,3 +7,4 @@ Av Oliver Marcusson, skrivet i rust.
 * Dag 1: ⭐⭐
 * Dag 2: ⭐⭐
 * Dag 3: ⭐⭐
+* Dag 4: ⭐⭐
